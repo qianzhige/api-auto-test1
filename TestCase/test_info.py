@@ -43,3 +43,4 @@ class Test_info:
         assertions.assert_code(sku_resp.status_code, 200)
         sku_resp_json = sku_resp.json()
         assertions.assert_in_text(sku_resp_json['message'], '成功')
+
