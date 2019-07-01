@@ -7,7 +7,7 @@ request = Request.Request()
 
 assertions = Assert.Assertions()
 
-excel_list = read_excel.read_excel_list('./document/test.xlsx')
+excel_list = read_excel.read_excel_list('../document/test.xlsx')
 ids_list = []
 for i in range(len(excel_list)):
     # 删除excel_list中每个小list的最后一个元素,并赋值给ids_pop
@@ -23,7 +23,7 @@ class Test_login:
     def test_login(self):
 
         # request.post_request 发送一个post请求 ( 传入参数 ) , 将响应结果返回赋值 给 login_resp
-        login_resp = request.post_request(url='http://192.168.60.132:8080/admin/login',
+        login_resp = request.post_request(url='qa.yansl.com:8080/admin/login',
                                             json={"username": "admin", "password": "123456"})
         # 响应状态码 :login_resp.status_code
         # 调用断言数字的方法: assertions.assert_code
@@ -43,7 +43,7 @@ class Test_login:
     @pytest.mark.parametrize('name,pwd,msg',excel_list,ids=ids_list)
     def test_login1(self,name,pwd,msg):
         # request.post_request 发送一个post请求 ( 传入参数 ) , 将响应结果返回赋值 给 login_resp
-        login_resp = request.post_request(url='http://192.168.60.132:8080/admin/login',
+        login_resp = request.post_request(url='qa.yansl.com:8080/admin/login',
                                           json={"username": name, "password": pwd})
         # 响应状态码 :login_resp.status_code
         # 调用断言数字的方法: assertions.assert_code

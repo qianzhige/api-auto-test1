@@ -2,7 +2,7 @@ from Common import Request, Assert
 
 request = Request.Request()
 assertion = Assert.Assertions()
-url = 'http://192.168.60.132:8080/'
+url = 'http://qa.yansl.com:8080/'
 
 class Login():
     def get_token(self):

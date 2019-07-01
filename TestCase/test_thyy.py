@@ -8,7 +8,7 @@ assertions = Assert.Assertions()
 url = Login.url
 head = Login.Login().get_token()
 th_id = 0
-excel_list = read_excel.read_excel_list('./document/退货.xlsx')
+excel_list = read_excel.read_excel_list('../document/退货.xlsx')
 ids_list = []
 for i in range(len(excel_list)):
     # 删除excel_list中每个小list的最后一个元素,并赋值给ids_pop
